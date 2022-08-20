@@ -1,0 +1,30 @@
+{
+  "name": "@monorepo",
+  "version": "1.0.0",
+  "description": "Boilerplate For Monorepo Project with NPM Workspaces",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm:dev:utils\" \"npm:dev:blog\" \"npm:dev:dashboard\"",
+    "dev:utils": "npm run dev -w @monorepo/utils",
+    "dev:blog": "npm run dev -w @monorepo/blog",
+    "dev:dashboard": "npm run dev -w @monorepo/dashboard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajatk16/monorepo-boilerplate.git"
+  },
+  "keywords": [],
+  "author": "Rajat S",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rajatk16/monorepo-boilerplate/issues"
+  },
+  "homepage": "https://github.com/rajatk16/monorepo-boilerplate#readme",
+  "workspaces": [
+    "apps/*",
+    "libs/*"
+  ],
+  "devDependencies": {
+    "concurrently": "^7.3.0"
+  }
+}
